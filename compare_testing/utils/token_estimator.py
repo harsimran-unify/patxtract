@@ -166,9 +166,12 @@ class TokenEstimator:
         
         for i, page in enumerate(pages):
             page_tokens = page_tokens_map[i]
-            
+
+            # Add safety margin to ensure chunks stay within limits
+            safe_limit = int(max_tokens_per_chunk * 0.95)  # 5% safety margin
+
             # Check if adding this page would exceed the limit BEFORE adding it
-            if current_chunk and current_tokens + page_tokens > max_tokens_per_chunk:
+            if current_chunk and current_tokens + page_tokens > safe_limit:
                 # Save current chunk and start a new one
                 chunks.append(current_chunk)
                 
@@ -224,6 +227,60 @@ class TokenEstimator:
         needs_chunking = total_tokens > usable_limit
 
         return needs_chunking, total_tokens
+
+    def get_unified_token_config(self, model_name: str) -> Dict[str, Any]:
+        """
+        Get unified token configuration - single source of truth.
+
+        Args:
+            model_name: Name of the model
+
+        Returns:
+            Configuration dictionary with consistent token limits
+        """
+        # Unified configurations with consistent limits across all components
+        configs = {
+            'qwen_2_5_7b_instruct_patient': {
+                'context_limit': 32768,  # Actual model context limit from API
+                'safety_buffer': 0.30,  # 30% buffer
+                'max_tokens': 22400,     # Consistent across all components
+                'overlap_ratio': 0.1
+            },
+            'gpt-oss-20b_patient': {
+                'context_limit': 128000,
+                'safety_buffer': 0.20,  # 20% buffer for larger models
+                'max_tokens': 102400,
+                'overlap_ratio': 0.1
+            },
+            'qwen3_vl_8b_instruct_patient': {
+                'context_limit': 128000,
+                'safety_buffer': 0.30,  # 30% buffer + vision processing
+                'max_tokens': 89600,
+                'overlap_ratio': 0.1
+            },
+            'gemma_3_4b_it_patient': {
+                'context_limit': 70000,  # 70K effective
+                'safety_buffer': 0.25,  # 25% buffer
+                'max_tokens': 52500,
+                'overlap_ratio': 0.1
+            },
+            'mistral_7b_instruct_patient': {
+                'context_limit': 32000,
+                'safety_buffer': 0.30,  # 30% buffer
+                'max_tokens': 22400,
+                'overlap_ratio': 0.1
+            }
+        }
+
+        # Default configuration for unknown models
+        default_config = {
+            'context_limit': 32000,
+            'safety_buffer': 0.20,
+            'max_tokens': 25600,
+            'overlap_ratio': 0.1
+        }
+
+        return configs.get(model_name, default_config)
 
     def create_chunks(self,
                      pages: List[Dict[str, Any]],

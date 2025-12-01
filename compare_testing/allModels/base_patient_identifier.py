@@ -636,13 +636,13 @@ class BasePatientIdentifier(abc.ABC):
         self.logger.info(f"Processing chunk: {len(pages)} pages, ~{total_tokens} tokens (limit: {model_limit})")
 
         # CRITICAL FIX: Validate chunk size BEFORE processing
-        # Use the chunk config's max_tokens_per_chunk if available
+        # Use unified token configuration for consistent limits
         try:
-            chunk_config = token_estimator.get_optimal_chunk_config(self.algorithm_name.lower())
-            max_chunk_tokens = chunk_config.get('max_tokens_per_chunk', int(model_limit * 0.5))
+            unified_config = token_estimator.get_unified_token_config(self.algorithm_name.lower())
+            max_chunk_tokens = unified_config['max_tokens']
         except:
             max_chunk_tokens = int(model_limit * 0.5)
-        
+
         if total_tokens > max_chunk_tokens:
             self.logger.error(f"Chunk too large: {total_tokens} tokens exceeds safe limit ({max_chunk_tokens:,})")
             processing_time = time.time() - start_time
@@ -661,7 +661,8 @@ class BasePatientIdentifier(abc.ABC):
         try:
             # Call the API with timeout protection
             self.logger.info(f"Calling API for chunk with {len(pages)} pages (~{total_tokens:,} tokens, limit: {max_chunk_tokens:,})")
-            response = call_api_func(messages)
+            # Pass total_tokens to API function for context limit calculation
+            response = call_api_func(messages, input_tokens=total_tokens)
 
             # Validate response structure
             if not response or 'choices' not in response or not response['choices']:

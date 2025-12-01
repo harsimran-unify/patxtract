@@ -45,14 +45,14 @@ class ChunkManager:
             pages, self.token_estimator.get_model_context_limits()[self.model_name]
         )
 
-        model_limit = self.token_estimator.get_model_context_limits()[self.model_name]
-        # Use 70% of limit for good utilization while maintaining safety margin
-        usable_limit = int(model_limit * 0.70)
+        # Use unified configuration for consistent token limits
+        unified_config = self.token_estimator.get_unified_token_config(self.model_name)
+        usable_limit = unified_config['max_tokens']
 
         analysis = {
             'total_pages': len(pages),
             'total_tokens': total_tokens,
-            'model_context_limit': model_limit,
+            'model_context_limit': unified_config['context_limit'],
             'usable_limit': usable_limit,
             'needs_chunking': needs_chunking,
             'chunk_config': self.chunk_config.copy()
@@ -63,16 +63,16 @@ class ChunkManager:
             pages_per_chunk = self.token_estimator.calculate_pages_per_chunk(
                 pages, usable_limit
             )
-            
+
             # Ensure reasonable minimum chunk size to avoid too many small chunks
             pages_per_chunk = max(pages_per_chunk, 25)
-            
+
             estimated_chunks = max(1, (len(pages) + pages_per_chunk - 1) // pages_per_chunk)
 
             analysis.update({
                 'pages_per_chunk': pages_per_chunk,
                 'estimated_chunks': estimated_chunks,
-                'chunk_overlap_ratio': self.chunk_config['overlap_ratio']
+                'chunk_overlap_ratio': unified_config['overlap_ratio']
             })
 
         return analysis

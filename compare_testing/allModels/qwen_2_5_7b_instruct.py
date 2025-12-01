@@ -49,13 +49,35 @@ class Qwen_2_5_7B_Instruct_PatientIdentifier(BasePatientIdentifier):
 
         self.logger.info(f"Qwen 2.5 7B Instruct Patient Identifier initialized with model: {self.model_id}")
 
+    def _estimate_input_tokens(self, messages: List[Dict[str, str]]) -> int:
+        """
+        Estimate input tokens from messages to prevent exceeding context limits.
+
+        Args:
+            messages: List of message dictionaries
+
+        Returns:
+            Estimated input token count
+        """
+        total_chars = 0
+        for message in messages:
+            content = message.get('content', '')
+            total_chars += len(content)
+
+        # Rough estimation: 4 characters per token for typical text
+        # Use slightly conservative ratio for medical documents
+        estimated_tokens = int(total_chars * 0.28)  # OCR text ratio from token_estimator
+
+        self.logger.debug(f"Estimated input tokens: {estimated_tokens} from {total_chars} characters")
+        return estimated_tokens
+
     def call_api(self, messages: List[Dict[str, str]], **kwargs) -> Dict[str, Any]:
         """
         Make API call to Qwen 2.5 7B Instruct via OpenRouter.
 
         Args:
             messages: List of message dictionaries for the API call
-            **kwargs: Additional keyword arguments (temperature, max_tokens, etc.)
+            **kwargs: Additional keyword arguments (temperature, max_tokens, input_tokens, etc.)
 
         Returns:
             Dictionary containing the API response
@@ -71,12 +93,40 @@ class Qwen_2_5_7B_Instruct_PatientIdentifier(BasePatientIdentifier):
             "Content-Type": "application/json"
         }
 
+        # Use provided input_tokens or calculate from messages if not provided
+        input_tokens = kwargs.get("input_tokens", self._estimate_input_tokens(messages))
+
+        # Get correct model context limit from unified configuration
+        import sys
+        import os
+        sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+        from utils.token_estimator import TokenEstimator
+        token_estimator = TokenEstimator()
+        unified_config = token_estimator.get_unified_token_config('qwen_2_5_7b_instruct_patient')
+        model_context_limit = unified_config['context_limit']
+
+        # Calculate safe max_tokens to stay within context limit
+        # Reserve space for response formatting and system prompts
+        safe_max_tokens = min(
+            kwargs.get("max_tokens", self.max_tokens),
+            model_context_limit - input_tokens - 1000  # 1000 token safety margin
+        )
+
+        # Ensure minimum reasonable response size
+        safe_max_tokens = max(safe_max_tokens, 100)
+
+        self.logger.debug(f"Input tokens: {input_tokens}, Model limit: {model_context_limit}, Safe max_tokens: {safe_max_tokens}")
+
+        if safe_max_tokens < 100:
+            self.logger.error(f"Not enough context space: {input_tokens} input tokens, only {model_context_limit - input_tokens} available")
+            raise Exception("Input too large for model context window")
+
         # Prepare request payload
         payload = {
             "model": self.model_id,
             "messages": messages,
             "temperature": kwargs.get("temperature", self.temperature),
-            "max_tokens": kwargs.get("max_tokens", self.max_tokens),
+            "max_tokens": safe_max_tokens,
             "top_p": 0.9,
             "stream": False
         }
@@ -85,6 +135,22 @@ class Qwen_2_5_7B_Instruct_PatientIdentifier(BasePatientIdentifier):
 
         try:
             import requests
+            import json
+
+            # Log request details for debugging invalid parameters
+            self.logger.debug(f"API Request - Model: {payload['model']}")
+            self.logger.debug(f"API Request - Messages count: {len(payload['messages'])}")
+            self.logger.debug(f"API Request - Temperature: {payload['temperature']}")
+            self.logger.debug(f"API Request - Max tokens: {payload['max_tokens']}")
+
+            # Log first message content for debugging (truncated)
+            if payload['messages']:
+                first_msg = payload['messages'][0].get('content', '')[:200]
+                self.logger.debug(f"API Request - First message preview: {first_msg}...")
+
+            payload_json = json.dumps(payload, indent=2)
+            self.logger.debug(f"Full payload (truncated): {payload_json[:1000]}...")
+
             response = requests.post(
                 self.api_url,
                 headers=headers,
@@ -110,6 +176,24 @@ class Qwen_2_5_7B_Instruct_PatientIdentifier(BasePatientIdentifier):
         except requests.exceptions.ConnectionError:
             raise Exception("Failed to connect to API endpoint")
         except requests.exceptions.HTTPError as e:
+            # Log detailed error information
+            if e.response is not None:
+                self.logger.error(f"HTTP Error - Status Code: {e.response.status_code}")
+                self.logger.error(f"HTTP Error - Response Headers: {dict(e.response.headers)}")
+
+                # Try to log response body for debugging
+                try:
+                    response_json = e.response.json()
+                    self.logger.error(f"HTTP Error - Response Body: {json.dumps(response_json, indent=2)}")
+                except:
+                    self.logger.error(f"HTTP Error - Response Text: {e.response.text[:500]}...")
+
+                # Log request details that might be causing invalid parameters
+                self.logger.error(f"Request that failed - Model: {payload.get('model', 'unknown')}")
+                self.logger.error(f"Request that failed - Max tokens: {payload.get('max_tokens', 'unknown')}")
+                self.logger.error(f"Request that failed - Temperature: {payload.get('temperature', 'unknown')}")
+                self.logger.error(f"Request that failed - Messages count: {len(payload.get('messages', []))}")
+
             if e.response.status_code == 429:
                 raise Exception("Rate limit exceeded - please try again later")
             elif e.response.status_code == 401:

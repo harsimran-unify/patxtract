@@ -1,0 +1,1242 @@
+{
+  "algorithm_name": "Qwen_2_5_7B_Instruct_Patient",
+  "processing_timestamp": "2025-12-01T13:01:43.252659",
+  "total_pages": 52,
+  "processing_time_seconds": 27.127927541732788,
+  "chunk_info": {
+    "is_chunk": true,
+    "chunk_tokens": 21563,
+    "chunk_pages": 52,
+    "model_limit": 32000
+  },
+  "patient_groups": {
+    "patient_001": {
+      "patient_info": {
+        "full_name": "Ahmad Altash",
+        "first_name": "Ahmad",
+        "last_name": "Altash",
+        "middle_name": "",
+        "dob": "03/04/1980",
+        "address_full": "6578 Montrose St, Detroit, MI 48228",
+        "city": "Detroit",
+        "state": "MI",
+        "postal_code": "48228",
+        "phone": "(206) 990-3340"
+      },
+      "entries": [
+        {
+          "entry_id": "patient_001_entry_1",
+          "pages": [
+            1,
+            2
+          ],
+          "page_range": "1-2",
+          "confidence": 0.96,
+          "supporting_data": {
+            "evidence_summary": "Pages contain delivery ticket with Ahmad Altash's name, DOB, and address."
+          }
+        },
+        {
+          "entry_id": "patient_001_entry_1",
+          "pages": [
+            306,
+            307,
+            308,
+            310,
+            311,
+            312,
+            313,
+            314,
+            315,
+            316,
+            317
+          ],
+          "page_range": "306-317",
+          "confidence": 0.95,
+          "supporting_data": {
+            "evidence_summary": "Pages contain Ahmad Altash's name, DOB, and medical information related to his power mobility device."
+          }
+        }
+      ],
+      "total_entries": 2,
+      "total_pages": 13,
+      "all_pages": [
+        1,
+        2,
+        306,
+        307,
+        308,
+        310,
+        311,
+        312,
+        313,
+        314,
+        315,
+        316,
+        317
+      ],
+      "group_confidence": 0.5349999999999999
+    },
+    "patient_002": {
+      "patient_info": {
+        "full_name": "Odil Vazirov",
+        "first_name": "Odil",
+        "last_name": "Vazirov",
+        "middle_name": "",
+        "dob": "08/28/1963",
+        "address_full": "19570 e purdue cir 211, Aurora, CO 80013-2110",
+        "city": "Aurora",
+        "state": "CO",
+        "postal_code": "80013-2110",
+        "phone": "(720) 400-0644"
+      },
+      "entries": [
+        {
+          "entry_id": "patient_002_entry_1",
+          "pages": [
+            16,
+            17,
+            26,
+            27,
+            30,
+            33,
+            34,
+            36,
+            39,
+            40,
+            41,
+            42
+          ],
+          "page_range": "16-42",
+          "confidence": 0.98,
+          "supporting_data": {
+            "evidence_summary": "Multiple pages contain Odil Vazirov's name, DOB, and medical records."
+          }
+        }
+      ],
+      "total_entries": 1,
+      "total_pages": 12,
+      "all_pages": [
+        16,
+        17,
+        26,
+        27,
+        30,
+        33,
+        34,
+        36,
+        39,
+        40,
+        41,
+        42
+      ],
+      "group_confidence": 0.98
+    },
+    "patient_003": {
+      "patient_info": {
+        "full_name": "Kaleb Zelie Yirgu",
+        "first_name": "Kaleb",
+        "last_name": "Yirgu",
+        "middle_name": "Zelie",
+        "dob": "12/04/2016",
+        "address_full": "8680 E Alameda Ave Apt 1312, Aurora, CO 80247",
+        "city": "Aurora",
+        "state": "CO",
+        "postal_code": "80247",
+        "phone": "720-829-5118"
+      },
+      "entries": [
+        {
+          "entry_id": "patient_003_entry_1",
+          "pages": [
+            35,
+            36,
+            37,
+            38
+          ],
+          "page_range": "35-38",
+          "confidence": 0.97,
+          "supporting_data": {
+            "evidence_summary": "Pages contain Kaleb Zelie Yirgu's name, DOB, and medical records."
+          }
+        }
+      ],
+      "total_entries": 1,
+      "total_pages": 4,
+      "all_pages": [
+        35,
+        36,
+        37,
+        38
+      ],
+      "group_confidence": 0.97
+    },
+    "patient_004": {
+      "patient_info": {
+        "full_name": "Yared Filmon Yeabio",
+        "first_name": "Yared",
+        "last_name": "Yeabio",
+        "middle_name": "Filmon",
+        "dob": "05/27/2019",
+        "address_full": "3829 Gold Bug St, Aurora, CO 80019",
+        "city": "Aurora",
+        "state": "CO",
+        "postal_code": "80019",
+        "phone": "720-525-4585"
+      },
+      "entries": [
+        {
+          "entry_id": "patient_004_entry_1",
+          "pages": [
+            45,
+            46,
+            47,
+            48,
+            49
+          ],
+          "page_range": "45-49",
+          "confidence": 0.98,
+          "supporting_data": {
+            "evidence_summary": "Pages contain Yared Filmon Yeabio's name, DOB, and medical records."
+          }
+        }
+      ],
+      "total_entries": 1,
+      "total_pages": 5,
+      "all_pages": [
+        45,
+        46,
+        47,
+        48,
+        49
+      ],
+      "group_confidence": 0.98
+    },
+    "patient_005": {
+      "patient_info": {
+        "full_name": "Ewin, Teresa",
+        "first_name": "Teresa",
+        "last_name": "Ewin",
+        "middle_name": "",
+        "dob": "10/08/1980",
+        "address_full": "3635 Michigan Ave Apt 10, Colorado Springs, CO-80910-2850",
+        "city": "Colorado Springs",
+        "state": "CO",
+        "postal_code": "80910",
+        "phone": "719-433-5029"
+      },
+      "entries": [
+        {
+          "entry_id": "patient_001_entry_1",
+          "pages": [
+            49,
+            50,
+            51,
+            52
+          ],
+          "page_range": "49-52",
+          "confidence": 0.965,
+          "supporting_data": {
+            "evidence_summary": "Pages consistently mention Teresa Ewin, DOB 10/08/1980, and detailed medical information."
+          }
+        }
+      ],
+      "total_entries": 1,
+      "total_pages": 4,
+      "all_pages": [
+        49,
+        50,
+        51,
+        52
+      ],
+      "group_confidence": 0.965
+    },
+    "patient_006": {
+      "patient_info": {
+        "full_name": "Yared, Nehemiah",
+        "first_name": "Nehemiah",
+        "last_name": "Yared",
+        "middle_name": "",
+        "dob": "01/15/2019",
+        "address_full": "24505 E Ohio Drive Aurora CO 80012",
+        "city": "Aurora",
+        "state": "CO",
+        "postal_code": "80012",
+        "phone": ""
+      },
+      "entries": [
+        {
+          "entry_id": "patient_002_entry_1",
+          "pages": [
+            63,
+            64,
+            65,
+            66,
+            67,
+            68
+          ],
+          "page_range": "63-68",
+          "confidence": 0.99,
+          "supporting_data": {
+            "evidence_summary": "Pages consistently mention Nehemiah Yared, MRN 11152266, DOB 01/15/2019, and detailed medical information."
+          }
+        }
+      ],
+      "total_entries": 1,
+      "total_pages": 6,
+      "all_pages": [
+        63,
+        64,
+        65,
+        66,
+        67,
+        68
+      ],
+      "group_confidence": 0.99
+    },
+    "patient_007": {
+      "patient_info": {
+        "full_name": "Petty, Rachel",
+        "first_name": "Rachel",
+        "last_name": "Petty",
+        "middle_name": "",
+        "dob": "11/17/1974",
+        "address_full": "3805 Radiant Dr Apt 538, Colorado Springs, CO-80917-3947",
+        "city": "Colorado Springs",
+        "state": "CO",
+        "postal_code": "80917",
+        "phone": "719-649-2721"
+      },
+      "entries": [
+        {
+          "entry_id": "patient_003_entry_1",
+          "pages": [
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80
+          ],
+          "page_range": "70-80",
+          "confidence": 0.99,
+          "supporting_data": {
+            "evidence_summary": "Pages consistently mention Rachel Petty, DOB 11/17/1974, and detailed medical information."
+          }
+        }
+      ],
+      "total_entries": 1,
+      "total_pages": 11,
+      "all_pages": [
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80
+      ],
+      "group_confidence": 0.99
+    },
+    "patient_008": {
+      "patient_info": {
+        "full_name": "Dmitriy Barshay",
+        "first_name": "Dmitriy",
+        "last_name": "Barshay",
+        "middle_name": "",
+        "dob": "03/13/1936",
+        "address_full": "9954 E CAROLINA CIR 101 DENVER CO 80247",
+        "city": "DENVER",
+        "state": "CO",
+        "postal_code": "80247",
+        "phone": "(720) 515-4495"
+      },
+      "entries": [
+        {
+          "entry_id": "patient_001_entry_1",
+          "pages": [
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86,
+            87,
+            88,
+            89,
+            90,
+            91,
+            92,
+            93,
+            94,
+            95,
+            96
+          ],
+          "page_range": "80-96",
+          "confidence": 0.99,
+          "supporting_data": {
+            "evidence_summary": "Consistent name, DOB, and address across multiple pages"
+          }
+        }
+      ],
+      "total_entries": 1,
+      "total_pages": 16,
+      "all_pages": [
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96
+      ],
+      "group_confidence": 0.99
+    },
+    "patient_009": {
+      "patient_info": {
+        "full_name": "Naomi Hailemariam",
+        "first_name": "Naomi",
+        "last_name": "Hailemariam",
+        "middle_name": "",
+        "dob": "02/01/2020",
+        "address_full": "1109 S Alton Ct Denver CO 80247",
+        "city": "DENVER",
+        "state": "CO",
+        "postal_code": "80247",
+        "phone": "(720) 502-4545"
+      },
+      "entries": [
+        {
+          "entry_id": "patient_002_entry_1",
+          "pages": [
+            97,
+            98,
+            99,
+            100,
+            101,
+            102,
+            103,
+            104,
+            105,
+            106,
+            107,
+            108,
+            109,
+            110,
+            111,
+            112
+          ],
+          "page_range": "97-112",
+          "confidence": 0.98,
+          "supporting_data": {
+            "evidence_summary": "Consistent name, DOB, and address across multiple pages"
+          }
+        }
+      ],
+      "total_entries": 1,
+      "total_pages": 16,
+      "all_pages": [
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112
+      ],
+      "group_confidence": 0.98
+    },
+    "patient_010": {
+      "patient_info": {
+        "full_name": "Liudmyla Slongovska",
+        "first_name": "Liudmyla",
+        "last_name": "Slongovska",
+        "middle_name": "",
+        "dob": "05/19/1951",
+        "address_full": "10335472522",
+        "city": "AURORA",
+        "state": "CO",
+        "postal_code": "80013-6087",
+        "phone": "(720) 755-0011"
+      },
+      "entries": [
+        {
+          "entry_id": "patient_003_entry_1",
+          "pages": [
+            113,
+            114,
+            115,
+            116,
+            117,
+            118,
+            119,
+            120
+          ],
+          "page_range": "113-120",
+          "confidence": 0.99,
+          "supporting_data": {
+            "evidence_summary": "Consistent name, DOB, and address across multiple pages"
+          }
+        }
+      ],
+      "total_entries": 1,
+      "total_pages": 8,
+      "all_pages": [
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120
+      ],
+      "group_confidence": 0.99
+    },
+    "patient_011": {
+      "patient_info": {
+        "full_name": "Ajose, Katherine",
+        "first_name": "Katherine",
+        "last_name": "Ajose",
+        "middle_name": "",
+        "dob": "12/23/1974",
+        "address_full": "1550 Pulsar Dr Ste 100 Colorado Springs CO 80916-4503",
+        "city": "COLORADO SPRINGS",
+        "state": "CO",
+        "postal_code": "80916-4503",
+        "phone": "(719) 574-7083"
+      },
+      "entries": [
+        {
+          "entry_id": "patient_004_entry_1",
+          "pages": [
+            131,
+            132
+          ],
+          "page_range": "131-132",
+          "confidence": 0.98,
+          "supporting_data": {
+            "evidence_summary": "Consistent name, DOB, and address across multiple pages"
+          }
+        }
+      ],
+      "total_entries": 1,
+      "total_pages": 2,
+      "all_pages": [
+        131,
+        132
+      ],
+      "group_confidence": 0.98
+    },
+    "patient_012": {
+      "patient_info": {
+        "full_name": "Emmanuel Tachibele",
+        "first_name": "Emmanuel",
+        "last_name": "Tachibele",
+        "middle_name": "",
+        "dob": "09/28/2021",
+        "address_full": "",
+        "city": "",
+        "state": "",
+        "postal_code": "",
+        "phone": ""
+      },
+      "entries": [
+        {
+          "entry_id": "patient_001_entry_1",
+          "pages": [
+            179,
+            180,
+            181,
+            182,
+            183
+          ],
+          "page_range": "179-183",
+          "confidence": 0.98,
+          "supporting_data": {
+            "evidence_summary": "Pages contain MRN 2612285, patient name Emmanuel Tachibele, DOB 09/28/2021, and consistent medical information."
+          }
+        }
+      ],
+      "total_entries": 1,
+      "total_pages": 5,
+      "all_pages": [
+        179,
+        180,
+        181,
+        182,
+        183
+      ],
+      "group_confidence": 0.98
+    },
+    "patient_013": {
+      "patient_info": {
+        "full_name": "Eliava Dawit",
+        "first_name": "Eliava",
+        "last_name": "Dawit",
+        "middle_name": "",
+        "dob": "08/27/2021",
+        "address_full": "4357 S Halifax Street Centennial CO 80015",
+        "city": "Centennial",
+        "state": "CO",
+        "postal_code": "80015",
+        "phone": "303-931-8707"
+      },
+      "entries": [
+        {
+          "entry_id": "patient_002_entry_1",
+          "pages": [
+            184,
+            185,
+            186,
+            187,
+            188,
+            189,
+            190,
+            191
+          ],
+          "page_range": "184-191",
+          "confidence": 0.99,
+          "supporting_data": {
+            "evidence_summary": "Pages contain MRN 3011752, patient name Eliava Dawit, DOB 08/27/2021, and consistent medical information."
+          }
+        }
+      ],
+      "total_entries": 1,
+      "total_pages": 8,
+      "all_pages": [
+        184,
+        185,
+        186,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "group_confidence": 0.99
+    },
+    "patient_014": {
+      "patient_info": {
+        "full_name": "Ashraf Mohamed Ghandi",
+        "first_name": "Ashraf Mohamed",
+        "last_name": "Ghandi",
+        "middle_name": "",
+        "dob": "04/04/2013",
+        "address_full": "1852 S De Gaulle Cl. Aurora CO 80018",
+        "city": "Aurora",
+        "state": "CO",
+        "postal_code": "80018",
+        "phone": "720-318-0033"
+      },
+      "entries": [
+        {
+          "entry_id": "patient_003_entry_1",
+          "pages": [
+            198,
+            199,
+            200,
+            201,
+            202
+          ],
+          "page_range": "198-202",
+          "confidence": 0.95,
+          "supporting_data": {
+            "evidence_summary": "Pages contain MRN 3515993, patient name Ashraf Mohamed Ghandi, DOB 04/04/2013, and consistent medical information."
+          }
+        }
+      ],
+      "total_entries": 1,
+      "total_pages": 5,
+      "all_pages": [
+        198,
+        199,
+        200,
+        201,
+        202
+      ],
+      "group_confidence": 0.96
+    },
+    "patient_015": {
+      "patient_info": {
+        "full_name": "Karmella Harris",
+        "first_name": "Karmella",
+        "last_name": "Harris",
+        "middle_name": "",
+        "dob": "01/15/2020",
+        "address_full": "",
+        "city": "",
+        "state": "",
+        "postal_code": "",
+        "phone": ""
+      },
+      "entries": [
+        {
+          "entry_id": "patient_004_entry_1",
+          "pages": [
+            211,
+            212,
+            213,
+            214,
+            215,
+            216,
+            217
+          ],
+          "page_range": "211-217",
+          "confidence": 0.98,
+          "supporting_data": {
+            "evidence_summary": "Pages contain patient name Karmella Harris, DOB 01/15/2020, and consistent medical information."
+          }
+        },
+        {
+          "entry_id": "patient_001_entry_1",
+          "pages": [
+            265,
+            266,
+            267,
+            268,
+            269,
+            270,
+            271,
+            272,
+            273,
+            274,
+            275,
+            276,
+            277,
+            278,
+            279,
+            280,
+            281,
+            282,
+            283,
+            284,
+            285,
+            286,
+            287,
+            288,
+            289
+          ],
+          "page_range": "265-289",
+          "confidence": 0.98,
+          "supporting_data": {
+            "evidence_summary": "Multiple prescriptions, medical notes, and demographic information consistently match KARMELLA HARRIS across pages."
+          }
+        }
+      ],
+      "total_entries": 2,
+      "total_pages": 32,
+      "all_pages": [
+        211,
+        212,
+        213,
+        214,
+        215,
+        216,
+        217,
+        265,
+        266,
+        267,
+        268,
+        269,
+        270,
+        271,
+        272,
+        273,
+        274,
+        275,
+        276,
+        277,
+        278,
+        279,
+        280,
+        281,
+        282,
+        283,
+        284,
+        285,
+        286,
+        287,
+        288,
+        289
+      ],
+      "group_confidence": 0.98
+    },
+    "patient_016": {
+      "patient_info": {
+        "full_name": "Manzi, Bryan",
+        "first_name": "Bryan",
+        "last_name": "Manzi",
+        "middle_name": "",
+        "dob": "04/07/2018",
+        "address_full": "20308 Powers Lane Centennial CO 80015",
+        "city": "Centennial",
+        "state": "CO",
+        "postal_code": "80015",
+        "phone": ""
+      },
+      "entries": [
+        {
+          "entry_id": "patient_005_entry_1",
+          "pages": [
+            219,
+            220,
+            221,
+            222,
+            223,
+            224,
+            225,
+            226,
+            227,
+            228,
+            230,
+            232,
+            233,
+            235,
+            236,
+            237,
+            239,
+            240,
+            241,
+            242,
+            243,
+            244,
+            245,
+            246,
+            247,
+            248,
+            249,
+            250,
+            251,
+            252,
+            253,
+            254,
+            255,
+            256,
+            257,
+            258,
+            259
+          ],
+          "page_range": "219-259",
+          "confidence": 0.99,
+          "supporting_data": {
+            "evidence_summary": "Pages contain MRN 2126151, patient name Bryan Manzi, DOB 04/07/2018, and consistent medical information."
+          }
+        }
+      ],
+      "total_entries": 1,
+      "total_pages": 37,
+      "all_pages": [
+        219,
+        220,
+        221,
+        222,
+        223,
+        224,
+        225,
+        226,
+        227,
+        228,
+        230,
+        232,
+        233,
+        235,
+        236,
+        237,
+        239,
+        240,
+        241,
+        242,
+        243,
+        244,
+        245,
+        246,
+        247,
+        248,
+        249,
+        250,
+        251,
+        252,
+        253,
+        254,
+        255,
+        256,
+        257,
+        258,
+        259
+      ],
+      "group_confidence": 0.99
+    },
+    "patient_017": {
+      "patient_info": {
+        "full_name": "Tesfalem, Aron",
+        "first_name": "Aron",
+        "last_name": "Tesfalem",
+        "middle_name": "",
+        "dob": "05/04/2021",
+        "address_full": "",
+        "city": "",
+        "state": "",
+        "postal_code": "",
+        "phone": ""
+      },
+      "entries": [
+        {
+          "entry_id": "patient_002_entry_1",
+          "pages": [
+            241,
+            242,
+            243,
+            244,
+            245
+          ],
+          "page_range": "241-245",
+          "confidence": 0.99,
+          "supporting_data": {
+            "evidence_summary": "Consistent name, DOB, and medical information across multiple pages."
+          }
+        }
+      ],
+      "total_entries": 1,
+      "total_pages": 5,
+      "all_pages": [
+        241,
+        242,
+        243,
+        244,
+        245
+      ],
+      "group_confidence": 0.99
+    },
+    "patient_018": {
+      "patient_info": {
+        "full_name": "Karamah Saad Eljahmi",
+        "first_name": "Karamah",
+        "last_name": "Eljahmi",
+        "middle_name": "Saad",
+        "dob": "01/13/1930",
+        "address_full": "7002 Bingham St, Dearborn, MI 48126",
+        "city": "Dearborn",
+        "state": "MI",
+        "postal_code": "48126",
+        "phone": ""
+      },
+      "entries": [
+        {
+          "entry_id": "patient_002_entry_1",
+          "pages": [
+            320,
+            321,
+            322,
+            323,
+            324,
+            325,
+            326,
+            327,
+            328,
+            329,
+            330,
+            331,
+            332
+          ],
+          "page_range": "320-332",
+          "confidence": 0.95,
+          "supporting_data": {
+            "evidence_summary": "Pages contain Karamah Saad Eljahmi's name, DOB, and medical information related to her power mobility device."
+          }
+        }
+      ],
+      "total_entries": 1,
+      "total_pages": 13,
+      "all_pages": [
+        320,
+        321,
+        322,
+        323,
+        324,
+        325,
+        326,
+        327,
+        328,
+        329,
+        330,
+        331,
+        332
+      ],
+      "group_confidence": 0.95
+    },
+    "patient_019": {
+      "patient_info": {
+        "full_name": "Ibrahim, Asmaa",
+        "first_name": "Asmaa",
+        "last_name": "Ibrahim",
+        "middle_name": "",
+        "dob": "07/15/1992",
+        "address_full": "",
+        "city": "",
+        "state": "",
+        "postal_code": "",
+        "phone": "(313) 443-0794"
+      },
+      "entries": [
+        {
+          "entry_id": "patient_001_entry_1",
+          "pages": [
+            339,
+            340,
+            341,
+            342,
+            343,
+            350,
+            352
+          ],
+          "page_range": "339-352",
+          "confidence": 0.98,
+          "supporting_data": {
+            "evidence_summary": "Multiple visits with consistent name, DOB, and medical information."
+          }
+        }
+      ],
+      "total_entries": 1,
+      "total_pages": 7,
+      "all_pages": [
+        339,
+        340,
+        341,
+        342,
+        343,
+        350,
+        352
+      ],
+      "group_confidence": 0.98
+    },
+    "patient_020": {
+      "patient_info": {
+        "full_name": "Jackson, Christine",
+        "first_name": "Christine",
+        "last_name": "Jackson",
+        "middle_name": "",
+        "dob": "07/05/1964",
+        "address_full": "15845 Meyers Rd, Detroit, MI 48227",
+        "city": "Detroit",
+        "state": "MI",
+        "postal_code": "48227",
+        "phone": "(463) 415-2869"
+      },
+      "entries": [
+        {
+          "entry_id": "patient_002_entry_1",
+          "pages": [
+            356,
+            357,
+            359,
+            360,
+            361,
+            362,
+            363,
+            364,
+            365,
+            366,
+            367,
+            368,
+            369,
+            370,
+            371,
+            372,
+            373,
+            374,
+            375,
+            376,
+            402,
+            404,
+            405,
+            406,
+            407,
+            408,
+            411,
+            412,
+            413,
+            414,
+            415,
+            416,
+            417,
+            418,
+            419,
+            420,
+            421,
+            422,
+            423,
+            424,
+            425
+          ],
+          "page_range": "356-425",
+          "confidence": 0.99,
+          "supporting_data": {
+            "evidence_summary": "Multiple visits with consistent name, DOB, and medical information."
+          }
+        }
+      ],
+      "total_entries": 1,
+      "total_pages": 41,
+      "all_pages": [
+        356,
+        357,
+        359,
+        360,
+        361,
+        362,
+        363,
+        364,
+        365,
+        366,
+        367,
+        368,
+        369,
+        370,
+        371,
+        372,
+        373,
+        374,
+        375,
+        376,
+        402,
+        404,
+        405,
+        406,
+        407,
+        408,
+        411,
+        412,
+        413,
+        414,
+        415,
+        416,
+        417,
+        418,
+        419,
+        420,
+        421,
+        422,
+        423,
+        424,
+        425
+      ],
+      "group_confidence": 0.99
+    },
+    "patient_021": {
+      "patient_info": {
+        "full_name": "Jackson, Christine",
+        "first_name": "Christine",
+        "last_name": "Jackson",
+        "middle_name": "",
+        "dob": "1964-07-05",
+        "address_full": "15845 Meyers Rd. DE THORNTON, MI 48227",
+        "city": "DE THORNTON",
+        "state": "MI",
+        "postal_code": "48227",
+        "phone": "4634152969"
+      },
+      "entries": [
+        {
+          "entry_id": "patient_001_entry_1",
+          "pages": [
+            424,
+            425,
+            427,
+            428,
+            429,
+            430,
+            431,
+            432,
+            433,
+            434,
+            435
+          ],
+          "page_range": "424-435",
+          "confidence": 0.99,
+          "supporting_data": {
+            "evidence_summary": "Multiple identifiers match including full name, DOB, address, and phone number across pages."
+          }
+        }
+      ],
+      "total_entries": 1,
+      "total_pages": 12,
+      "all_pages": [
+        424,
+        425,
+        426,
+        427,
+        428,
+        429,
+        430,
+        431,
+        432,
+        433,
+        434,
+        435
+      ],
+      "group_confidence": 0.99
+    }
+  },
+  "summary": {
+    "total_patients": 21,
+    "total_entries": 23,
+    "assigned_pages": 262,
+    "unassigned_pages": -210,
+    "average_confidence": 0.9595238095238094
+  },
+  "chunking_info": {
+    "processed_in_chunks": true,
+    "num_chunks": 10,
+    "model_name": "qwen_2_5_7b_instruct_patient"
+  },
+  "chunking_metadata": {
+    "total_chunks": 11,
+    "successful_chunks": 10,
+    "chunk_sizes": [
+      52,
+      34,
+      54,
+      53,
+      45,
+      48,
+      40,
+      39,
+      38,
+      57,
+      12
+    ],
+    "total_tokens_processed": 195571,
+    "model_context_limit": 32768
+  },
+  "source_data_file": "extracted_3973c9d2_20251126_151040.json"
+}
