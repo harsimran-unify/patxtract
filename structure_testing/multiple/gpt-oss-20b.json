@@ -1,0 +1,45 @@
+{
+  "model": "gpt-oss-20b",
+  "source_data_file": "1758735511_RX_1764063031.json",
+  "extraction_date": "",
+  "response": {
+    "patient": {
+      "full_name": "HUSSEIN-MUTHANNA, ALI A",
+      "first_name": "Ali",
+      "middle_name": "A",
+      "last_name": "Hussein-Muthanna",
+      "dob": "09/27/1974",
+      "address_full": "5711 LAWNDALE ST",
+      "city": "DETROIT",
+      "state": "Michigan",
+      "country": "USA",
+      "postal_code": "48210-1869",
+      "state_code": "MI",
+      "phone": "313-290-4365",
+      "mobile_landline": "",
+      "email": "",
+      "fax": "",
+      "account_number": ""
+    },
+    "doctor": {
+      "npi": ""
+    },
+    "insurance": {
+      "primary_insurance": "United Healthcare Community Plan-MI (Medicaid Replacement - HMO)",
+      "primary_insurance_id": "ID0031697226",
+      "secondary_insurance": "",
+      "secondary_insurance_id": "",
+      "tertiary_insurance": "",
+      "tertiary_insurance_id": ""
+    },
+    "dme": {
+      "dme_id": "",
+      "items": [
+        {
+          "item_name": "FREESTYLE LIBRE 3 READER",
+          "item_quantity": "1"
+        }
+      ]
+    }
+  }
+}
